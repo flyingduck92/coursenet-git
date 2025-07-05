@@ -1,4 +1,6 @@
 /* 
+  CASE 1 - RECTANGLE AREA
+
   BEGIN 
     STORE panjang WITH 10
     STORE lebar WITH 5
