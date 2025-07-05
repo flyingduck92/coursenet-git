@@ -4,7 +4,7 @@
   - ALGORITHM
     1. make variable panjang with any value
     2. make variable lebar with any value
-    3. make variable area with lebar MULTIPLY BY panjang
+    3. make variable area with lebar MULTIPLY panjang
     4. display the result of area
 
   - PSEUDOCODE 
@@ -24,7 +24,7 @@
   - ALGORITHM
     1. make variable constant PHI with 3.14
     2. make variable radius (r)
-    3. make variable area with phi MULTIPLIED BY SQUARED of radius (r*r)
+    3. make variable area with phi MULTIPLY SQUARED of radius (r*r)
     4. display the result of area
 
   - PSEUDOCODE 
@@ -45,7 +45,7 @@
   - ALGORITHM
     1. make variable constant PHI with 3.14
     2. make variable radius (r)
-    3. make variable valume with (2/3) MULTIPLIED BY phi MULTIPLIED BY CUBE of radius(r*r*r)
+    3. make variable valume with (2/3) MULTIPLY phi MULTIPLY CUBE of radius(r*r*r)
     4. display the result of volume
 
   - PSEUDOCODE 
@@ -68,7 +68,7 @@
     2. make variable radius (r) with any value
     3. make variable height (h) with any value
     
-    4. make CIRCLE_AREA with phi MULTIPLIED BY SQUARED of radius(r*r)
+    4. make CIRCLE_AREA with phi MULTIPLY BY SQUARED of radius(r*r)
     5. make CURVED_AREA with 2 MULTIPLY phi MULTIPLY radius(r) MULTIPLY height(h)
     
     6. make ALL_SURFACE with 2 MULTIPLY circle_area ADD curved_area 
