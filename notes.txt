@@ -1,8 +1,16 @@
+-- ADD/COMMIT/PUSH
 git add .
+git add <filename>
 git commit -m "Your notes"
 git push origin main
 
+-- STATUS
 git status 
 
+-- RESTORE (if wrong file/directory)
+git restore --staged <filename>
+git restore --staged .
+
+-- GLOBAL USERNAME/EMAIL
 git config --global user.name "Your name"
 git config --global user.email "your_email@example.com"
