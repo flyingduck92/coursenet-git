@@ -128,3 +128,65 @@ if (char_power > 100) {
 } else if (char_power <= 30) {
   console.log("Character is Beginner")
 }
+
+/* 
+  STUDY CASE 4
+
+  Thare are 3 type of accesibility: Public, Protected, Private
+  If accessibility is empty, show "Input access"
+
+  Accessibility Public, if level below 5, then show "Public below 5"
+  Accessibility Public, if level above 5, then show "Public above 5"
+  Accessibility Public, if level equals to 5, then show "Public 5"
+
+  Accessibility Private, if level below 5, then show "Private below 5"
+  Accessibility Private, if level above 5, then show "Private above 5"
+  Accessibility Private, if level equals to 5, then show "Private 5"
+
+  Accessibility Protected, if level below 5, then show "Protected below 5"
+  Accessibility Protected, if level above 5, then show "Protected above 5"
+  Accessibility Protected, if level equals to 5, then show "Protected 5"
+
+  If accessibility unrecognized/undefined, then "Access is not defined"
+
+  Please make the code using Nested Conditional: Switch case and if else.
+*/
+
+let accesibility = 'Public'
+let level = 4
+
+switch (accesibility) {
+  case '':
+    console.log("Input access")
+    break
+  case 'Public':
+    if (level < 5) {
+      console.log("Public below 5")
+    } else if (level > 5) {
+      console.log("Public above 5")
+    } else {
+      console.log("Public 5")
+    }
+    break
+  case 'Private':
+    if (level < 5) {
+      console.log("Private below 5")
+    } else if (level > 5) {
+      console.log("Private above 5")
+    } else {
+      console.log("Private 5")
+    }
+    break
+  case 'Protected':
+    if (level < 5) {
+      console.log("Protected below 5")
+    } else if (level > 5) {
+      console.log("Protected above 5")
+    } else {
+      console.log("Protected 5")
+    }
+    break
+  default:
+    console.log("Access is not defined")
+    break
+}
