@@ -81,3 +81,50 @@ switch (chosen) {
     console.log("Error: please contact the provider")
     break
 }
+
+/* 
+  CASE 3 - IF-ELSE MULTIPLE CONDITIONS
+  Level classification for playable character in a game are the followings:
+
+  Interval              Status
+  --------------------------------
+  More than 100         Expert
+  Between 70 and 100    Pro
+  Between 50 and 70     Normal
+  Between 30 and 50     Basic
+  Less than 30          Beginner
+
+  Please process the classifications if Power of the playable character is 75,
+  then the result is "Character is Pro" 
+
+  - PSEUDOCODE
+  BEGIN 
+    STORE char_power WITH ANY VALUE
+
+    IF char_power ABOVE 100
+      SHOW "Character is Expert." 
+    ELSE IF char_power ABOVE 70 AND char_power BELOW OR EQUAL TO 100
+      SHOW "Character is Pro." 
+    ELSE IF char_power ABOVE 50 AND char_power BELOW OR EQUAL TO 70
+      SHOW "Character is Normal" 
+    ELSE IF char_power ABOVE 30 AND char_power BELOW OR EQUAL TO 50
+      SHOW "Character is Basic" 
+    ELSE IF char_power BELOW OR EQUAL TO 30
+      SHOW "Character is Beginner"
+  END
+
+*/
+
+let char_power = 71
+
+if (char_power > 100) {
+  console.log("Character is Expert")
+} else if (char_power > 70 && char_power <= 100) {
+  console.log("Character is Pro")
+} else if (char_power > 50 && char_power <= 70) {
+  console.log("Character is Normal")
+} else if (char_power > 30 && char_power <= 50) {
+  console.log("Character is Basic")
+} else if (char_power <= 30) {
+  console.log("Character is Beginner")
+}
