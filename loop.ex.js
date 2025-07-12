@@ -36,6 +36,7 @@ for (let i = 1; i <= limit; i++) {
   console.log(i + ' adalah ' + chars)
 }
 console.log('=================')
+
 /*  CASE 2
     Make a loop with below output:
 
@@ -53,6 +54,7 @@ for (let i = 1; i <= number; i++) {
 console.log(`Faktor dari ${number} adalah ${theFactors}`)
 console.log(`Banyaknya angka dari faktor ${number} adalah ${theFactors.length}`)
 console.log('=================')
+
 /*  CASE 3
     Check the number is prime
 
