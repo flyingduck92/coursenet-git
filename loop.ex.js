@@ -33,11 +33,11 @@
 //   console.log(i + ' adalah ' + chars)
 // }
 
-/*  CASE 2 
+/*  CASE 2
     Make a loop with below output:
 
     Faktor dari 15; 1 3 5 15
-    Jumlah faktor dari 15 ada 4    
+    Jumlah faktor dari 15 ada 4
     .....
 */
 
@@ -52,25 +52,45 @@
 // console.log(`Banyaknya angka dari faktor ${number} adalah ${theFactors.length}`)
 
 /*  CASE 3
-    Check the number is prime 
+    Check the number is prime
 
     Faktor dari 15; 1 3 5 15
-    Jumlah faktor dari 15 ada 4    
+    Jumlah faktor dari 15 ada 4
     .....
 */
 
-let myNumber = 1003
-let factors = []
-let result
-for (let i = 1; i <= myNumber; i++) {
-  if (myNumber % i === 0) {
-    factors.push(i)
-  }
-  if (factors.length > 2) {
-    result = 'bukan merupakan bilangan prima'
-  } else {
-    result = 'adalah bilangan prima'
-  }
+// let myNumber = 1003
+// let factors = []
+// let result
+// for (let i = 1; i <= myNumber; i++) {
+//   if (myNumber % i === 0) {
+//     factors.push(i)
+//   }
+//   if (factors.length > 2) {
+//     result = 'bukan merupakan bilangan prima'
+//   } else {
+//     result = 'adalah bilangan prima'
+//   }
+// }
+// console.log(`Faktor dari ${myNumber} adalah ${factors} (${factors.length} angka)`)
+// console.log(`${myNumber} ${result}`)
+
+/*  CASE 4
+    Calculate the factorial of a number 
+
+    Faktorial of 5!: 5*4*3*2*1
+    Result is 120     
+    .....
+*/
+
+let num = 5
+let factorial = []
+let total = 1
+for (let i = num; i >= 1; i--) {
+  factorial.push(i)
+  total *= i
 }
-console.log(`Faktor dari ${myNumber} adalah ${factors} (${factors.length} angka)`)
-console.log(`${myNumber} ${result}`)
+
+console.log(`Factorial of ${num}!: ${factorial.join("*")}`)
+console.log(`Result is ${total}`)
+
