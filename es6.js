@@ -124,7 +124,7 @@ let students = [
   },
 ]
 
-// FUnction to Read
+// Function to Read
 function showStudents() {
   console.log('Student list: ')
   students.forEach(student => {
@@ -134,7 +134,7 @@ function showStudents() {
   })
 }
 
-/* FUnction to Insert */
+/* Function to Insert */
 function addStudent(name, major) {
   const newId = students.length + 1
   const isGraduated = false
@@ -149,6 +149,7 @@ function addStudent(name, major) {
   students = [...students, newStudent]
 }
 
+/* Function to Update */
 function updateStudent(id, name = '') {
   let updatedStudent = students.filter(student => {
     if (student.id === id) {
@@ -160,7 +161,7 @@ function updateStudent(id, name = '') {
   students = updatedStudent
 }
 
-
+/* Function to Delete */
 function deleteStudent(id) {
   students = students.filter(student => student.id != id)
 }
