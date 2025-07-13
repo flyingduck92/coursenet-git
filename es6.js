@@ -146,7 +146,7 @@ function addStudent(name, major) {
     isGraduated
   }
 
-  students.push(newStudent)
+  students = [...students, newStudent]
 }
 
 function updateStudent(id, name = '') {
