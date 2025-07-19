@@ -14,7 +14,11 @@ class Vehicle {
   }
 }
 
-let myVehicle = new Vehicle(100, "Civic", "Sedan", 1000000, true)
-console.log(myVehicle)
-console.log(typeof myVehicle)
-console.log(typeof Vehicle)
+let myVehicle1 = new Vehicle(100, "Civic", "Sedan", 1000000, true)
+let myVehicle2 = new Vehicle(200, "Hino", "Truck", 2500000, true)
+let myVehicle3 = new Vehicle(300, "Land Rover", "SUV", 5000000, true)
+console.log(myVehicle1)
+console.log(myVehicle2)
+console.log(myVehicle3)
+// console.log(typeof myVehicle1)
+// console.log(typeof Vehicle)
