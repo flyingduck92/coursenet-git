@@ -1,4 +1,4 @@
-import Cookie from './Cookie.js'
+const Cookie = require("./Cookie")
 
 class Sweet extends Cookie {
   constructor(id, name, price, ingredients) {
@@ -7,4 +7,4 @@ class Sweet extends Cookie {
   }
 }
 
-export default Sweet
+module.exports = Sweet

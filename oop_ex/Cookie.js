@@ -8,7 +8,4 @@ class Cookie {
   }
 }
 
-export default Cookie
-
-
-
+module.exports = Cookie

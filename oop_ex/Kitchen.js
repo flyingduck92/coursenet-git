@@ -1,6 +1,6 @@
-import Chocolate from './Chocolate.js'
-import Sweet from './Sweet.js'
-import Strawberry from './Strawberry.js'
+const Chocolate = require("./Chocolate")
+const Sweet = require("./Sweet")
+const Strawberry = require("./Strawberry")
 
 class Kitchen {
   constructor(container) {
@@ -172,4 +172,4 @@ class Kitchen {
   }
 }
 
-export default Kitchen
+module.exports = Kitchen

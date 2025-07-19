@@ -1,4 +1,4 @@
-import Kitchen from './Kitchen.js'
+const Kitchen = require("./Kitchen")
 
 let kitchen = new Kitchen()
 // name, price, ingredients, type
