@@ -135,11 +135,12 @@ class Kitchen {
         break
     }
 
-    if (type === 'asc') {
+    if (type === 'asc' || type === 'ASC') {
       console.log(`ASC:`)
       for (let i = 0; i < results.length; i++) {
         console.log(`${i + 0}. ${results[i].name} - Rp. ${Number(results[i].price).toLocaleString('id')}`)
       }
+
     } else {
       console.log(`DESC:`)
       for (let i = 0; i < results.length; i++) {
