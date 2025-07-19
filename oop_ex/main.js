@@ -5,8 +5,8 @@ let kitchen = new Kitchen()
 kitchen.bake('Chocolate Sweety', 50000, ['Chocolate', 'Sugar', 'Flour', 'Butter'], 'Chocolate')
 kitchen.bake('Brownies Cakep', 70000, ['Chocolate', 'Sugar', 'Flour', 'Eggs'], 'Chocolate')
 kitchen.bake('Sweet Butter', 45000, ['Butter', 'Sugar', 'Flour', 'Eggs'], 'Sweet')
-kitchen.bake('Red Velvet', 95000, ['Food colouring (Red)', 'Sugar', 'Flour', 'Eggs', 'Strawberry Syrup'], 'Strawberry')
-kitchen.bake('Berry Cake', 150000, ['Diced Strawberry', 'Sugar', 'Flour', 'Eggs'], 'Strawberry')
+kitchen.bake('Red Velvet', 95000, ['Strawberry', 'Sugar', 'Flour', 'Eggs', 'Salt'], 'Strawberry')
+kitchen.bake('Berry Cake', 150000, ['Strawberry', 'Sugar', 'Flour', 'Eggs', 'Vanilla'], 'Strawberry')
 // kitchen.showCookies()
 
 // console.log('\n\n')
@@ -23,15 +23,25 @@ kitchen.bake('Berry Cake', 150000, ['Diced Strawberry', 'Sugar', 'Flour', 'Eggs'
 // console.log('\n\n')
 // kitchen.showCookies()
 
+console.log('\n')
+
 /* Task 5 START */
-/* 5A  */
+/* 5a  */
 // kitchen.showIngredients(1)
-// kitchen.addIngredient(1, ['Fanta', 'Tea'])
-// kitchen.showIngredients(1)
+// kitchen.showIngredients(3)
 
+/* 5b */
+// kitchen.showIngredients(3)
+// kitchen.addIngredient(3, ['Cheese', 'Crushed Peanuts'])
+// kitchen.showIngredients(3)
+
+/* 5c */
 // kitchen.categoriesCookiesByIngredient("Butter")
+// kitchen.categoriesCookiesByIngredient("Strawberry")
 
+/* 5d */
 // kitchen.sortCookies("asc")
 // kitchen.sortCookies("desc")
 
-kitchen.categoriesCookies()
+/* 5e */
+// kitchen.categoriesCookies()
