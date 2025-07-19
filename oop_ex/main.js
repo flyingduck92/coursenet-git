@@ -7,20 +7,21 @@ kitchen.bake('Brownies Cakep', 70000, ['Chocolate', 'Sugar', 'Flour', 'Eggs'], '
 kitchen.bake('Sweet Butter', 45000, ['Butter', 'Sugar', 'Flour', 'Eggs'], 'Sweet')
 kitchen.bake('Red Velvet', 95000, ['Strawberry', 'Sugar', 'Flour', 'Eggs', 'Salt'], 'Strawberry')
 kitchen.bake('Berry Cake', 150000, ['Strawberry', 'Sugar', 'Flour', 'Eggs', 'Vanilla'], 'Strawberry')
+
 // kitchen.showCookies()
 
-// console.log('\n\n')
+console.log('\n\n')
 /* delete id 2 and 4 */
 // kitchen.eat(2)
 // kitchen.eat(4)
 // kitchen.showCookies()
 
-// console.log('\n\n')
+console.log('\n\n')
 /* edit id 2 and 4 */
 // kitchen.addSugar(1)
 // kitchen.addSugar(3)
 
-// console.log('\n\n')
+console.log('\n\n')
 // kitchen.showCookies()
 
 console.log('\n')
@@ -45,3 +46,5 @@ console.log('\n')
 
 /* 5e */
 // kitchen.categoriesCookies()
+
+/* Task 5 END */
