@@ -40,7 +40,7 @@ class Kitchen {
   addSugar(id) {
     let updated = this.container.map(item => {
       if (item.id === Number(id)) {
-        item.isSweet = !item.isSweet
+        item.isSweet = true
       }
       return item
     })

@@ -8,21 +8,21 @@ kitchen.bake('Sweet Butter', 45000, ['Butter', 'Sugar', 'Flour', 'Eggs'], 'Sweet
 kitchen.bake('Red Velvet', 95000, ['Strawberry', 'Sugar', 'Flour', 'Eggs', 'Salt'], 'Strawberry')
 kitchen.bake('Berry Cake', 150000, ['Strawberry', 'Sugar', 'Flour', 'Eggs', 'Vanilla'], 'Strawberry')
 
-// kitchen.showCookies()
+kitchen.showCookies()
 
 console.log('\n\n')
 /* delete id 2 and 4 */
-// kitchen.eat(2)
-// kitchen.eat(4)
-// kitchen.showCookies()
+kitchen.eat(2)
+kitchen.eat(4)
+kitchen.showCookies()
 
 console.log('\n\n')
 /* edit id 2 and 4 */
-// kitchen.addSugar(1)
-// kitchen.addSugar(3)
+kitchen.addSugar(1)
+kitchen.addSugar(3)
 
 console.log('\n\n')
-// kitchen.showCookies()
+kitchen.showCookies()
 
 console.log('\n')
 
