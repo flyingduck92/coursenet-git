@@ -52,7 +52,7 @@ class Supermarket {
 
   addItem(name, price, stock, category) {
     let id
-    if (this.shelves.length == 0) {
+    if (this.shelves.length === 0) {
       id = 1
     } else {
       let lastIdx = this.shelves.length - 1
