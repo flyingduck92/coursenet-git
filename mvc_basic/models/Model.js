@@ -34,7 +34,7 @@ class Coffee {
         coffee.name = name
         coffee.price = +price
         coffee.beans = beans
-        coffee.is_available = is_available
+        coffee.is_available = JSON.parse(is_available)
       }
       return coffee
     })
