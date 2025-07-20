@@ -42,6 +42,14 @@ class Coffee {
     this.save(coffees)
   }
 
+  static delete(params) {
+    let [id] = params
+    let coffees = this.getCoffees()
+    let updated = coffees.filter(coffee => +coffee.id !== +id)
+    coffees = updated
+    this.save(coffees)
+  }
+
   static save(coffees) {
     const coffeesStr = JSON.stringify(coffees, null, 2)
     fs.writeFileSync('./data.json', coffeesStr)

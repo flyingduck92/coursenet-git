@@ -13,7 +13,7 @@ switch (command) {
   case 'update':
     Controller.updateCoffee(params)
     break
-  case 'dalete':
+  case 'delete':
     Controller.deleteCoffee(params)
     break
   default:

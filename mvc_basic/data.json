@@ -33,12 +33,5 @@
     "price": 10.2,
     "beans": "Mixed Blend",
     "is_available": false
-  },
-  {
-    "id": 6,
-    "name": "Macha Latte",
-    "price": 3500,
-    "beans": "Robusta",
-    "is_available": "false"
   }
 ]
