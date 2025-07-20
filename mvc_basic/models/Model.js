@@ -15,6 +15,37 @@ class Coffee {
     const coffees = JSON.parse(data)
     return coffees
   }
+
+  static add(params) {
+    let coffees = this.getCoffees()
+    let id = coffees[coffees.length - 1].id + 1
+    let [name, price, beans] = params
+    let is_available = true
+
+    coffees = [...coffees, new Coffee(id, name, +price, beans, is_available)]
+    this.save(coffees)
+  }
+
+  static update(params) {
+    let [id, name, price, beans, is_available] = params
+    let coffees = this.getCoffees()
+    let updated = coffees.map(coffee => {
+      if (coffee.id === Number(id)) {
+        coffee.name = name
+        coffee.price = +price
+        coffee.beans = beans
+        coffee.is_available = is_available
+      }
+      return coffee
+    })
+    coffees = updated
+    this.save(coffees)
+  }
+
+  static save(coffees) {
+    const coffeesStr = JSON.stringify(coffees, null, 2)
+    fs.writeFileSync('./data.json', coffeesStr)
+  }
 }
 
 module.exports = Coffee

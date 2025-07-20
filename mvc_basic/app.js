@@ -8,13 +8,13 @@ switch (command) {
     Controller.showCoffees()
     break
   case 'add':
-    Controller.addCoffee()
+    Controller.addCoffee(params)
     break
   case 'update':
-    Controller.updateCoffee()
+    Controller.updateCoffee(params)
     break
   case 'dalete':
-    Controller.deleteCoffee()
+    Controller.deleteCoffee(params)
     break
   default:
     Controller.message('Command not found')
