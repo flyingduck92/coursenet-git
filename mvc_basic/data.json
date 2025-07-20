@@ -2,71 +2,36 @@
   {
     "id": 1,
     "name": "Ethiopian Yirgacheffe",
-    "origin": "Ethiopia",
+    "price": 12.00,
     "beans": "Arabica",
     "is_available": true
   },
   {
     "id": 2,
     "name": "Colombian Supremo",
-    "origin": "Colombia",
+    "price": 9.50,
     "beans": "Arabica",
     "is_available": true
   },
   {
     "id": 3,
     "name": "Sumatra Mandheling",
-    "origin": "Indonesia",
+    "price": 8.80,
     "beans": "Robusta",
     "is_available": false
   },
   {
     "id": 4,
     "name": "Kenya AA",
-    "origin": "Kenya",
+    "price": 11.00,
     "beans": "Arabica",
     "is_available": true
   },
   {
     "id": 5,
     "name": "Guatemala Antigua",
-    "origin": "Guatemala",
+    "price": 10.20,
     "beans": "Mixed Blend",
-    "is_available": false
-  },
-  {
-    "id": 6,
-    "name": "Brazil Santos",
-    "origin": "Brazil",
-    "beans": "Arabica",
-    "is_available": true
-  },
-  {
-    "id": 7,
-    "name": "Panama Geisha",
-    "origin": "Panama",
-    "beans": "Arabica",
-    "is_available": false
-  },
-  {
-    "id": 8,
-    "name": "Costa Rica Tarrazú",
-    "origin": "Costa Rica",
-    "beans": "Mixed Blend",
-    "is_available": true
-  },
-  {
-    "id": 9,
-    "name": "Tanzania Peaberry",
-    "origin": "Tanzania",
-    "beans": "Robusta",
-    "is_available": true
-  },
-  {
-    "id": 10,
-    "name": "Honduras Marcala",
-    "origin": "Honduras",
-    "beans": "Arabica",
     "is_available": false
   }
 ]
