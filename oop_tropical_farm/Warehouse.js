@@ -4,7 +4,7 @@ const { Carrot, Potato, Other: OtherV } = require('./Vegetables/Vegetable')
 class Warehouse {
   constructor(carts, totalPrice) {
     this.carts = carts || []
-    totalPrice = totalPrice || 0
+    this.totalPrice = totalPrice || 0
   }
 
   harvest(name, type, price) {
