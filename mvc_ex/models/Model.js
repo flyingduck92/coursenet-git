@@ -26,8 +26,8 @@ class ModelWine {
     let formatedWines = ''
     for (let i = 0; i < wines.length; i++) {
       formatedWines === '' ?
-        formatedWines += `${i + 1}. ${wines[i].name} - ${wines[i].type}` :
-        formatedWines += `\n${i + 1}. ${wines[i].name} - ${wines[i].type}`
+        formatedWines += `${i + 1}. ${wines[i].name} - ${wines[i].year} - ${wines[i].type}` :
+        formatedWines += `\n${i + 1}. ${wines[i].name} - ${wines[i].year} - ${wines[i].type}`
     }
     return formatedWines
   }
@@ -131,14 +131,20 @@ class ModelWine {
 
     switch (params[0].toLowerCase()) {
       case 'asc':
+      case 'ASC':
+      case 'Ascending':
       case 'ascending':
+      case 'ASCENDING':
         wines.sort((a, b) => b.year - a.year)
-        message = this.formatResult(wines, 'Ascending')
+        message = this.formatResult(wines, 'asc')
         break
       case 'desc':
+      case 'DESC':
+      case 'Descending':
       case 'descending':
+      case 'DESCENDING':
         wines.sort((a, b) => a.year - b.year)
-        message = this.formatResult(wines, 'Descending')
+        message = this.formatResult(wines, 'desc')
         break
     }
     return message
@@ -169,6 +175,12 @@ class ModelWine {
 
   static formatType(type) {
     switch (type) {
+      case 'asc':
+        type = 'Ascending'
+        break
+      case 'desc':
+        type = 'Descending'
+        break
       case 'R':
       case 'r':
       case 'Red':
