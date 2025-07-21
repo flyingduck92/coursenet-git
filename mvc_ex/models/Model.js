@@ -21,12 +21,27 @@ class ModelWine {
     return singleWine
   }
 
+  static allWines() {
+    let wines = this.getAll()
+    let formatedWines = ''
+    for (let i = 0; i < wines.length; i++) {
+      formatedWines === '' ?
+        formatedWines += `${i + 1}. ${wines[i].name} - ${wines[i].type}` :
+        formatedWines += `\n${i + 1}. ${wines[i].name} - ${wines[i].type}`
+    }
+    return formatedWines
+  }
+
   static add(params) {
     let wines = this.getAll()
     let newEntry = params[0]
     let id
 
-    wines.length > 0 ? (id = wines[wines.length - 1].id + 1) : (id = 1)
+    if (wines.length > 0) {
+      id = wines[wines.length - 1].id + 1
+    } else {
+      id = 1
+    }
 
     let { name, year, type } = this.formatItem(newEntry)
     let createdAt = new Date().toJSON()
@@ -118,21 +133,41 @@ class ModelWine {
       case 'asc':
       case 'ascending':
         wines.sort((a, b) => b.year - a.year)
-        message = this.sortFormat(wines)
+        message = this.formatResult(wines, 'Ascending')
         break
       case 'desc':
       case 'descending':
         wines.sort((a, b) => a.year - b.year)
-        message = this.sortFormat(wines)
+        message = this.formatResult(wines, 'Descending')
         break
     }
     return message
   }
 
+  static groupBy(params) {
+    let groupName = params[0]
+    let wines = this.getAll()
+
+    let result = Object.groupBy(wines, ({ type }) => this.formatType(type))
+
+    if (this.formatType(groupName) === "Red") {
+      return this.formatResult(result.Red, groupName)
+    } else if (this.formatType(groupName) === "White") {
+      return this.formatResult(result.White, groupName)
+    } else {
+      return this.formatResult(result.Other, groupName)
+    }
+  }
+
   static formatItem(item) {
     let [name, year, type] = item.split('/')
     year = Number(year)
+    type = this.formatType(type)
 
+    return { name, year, type }
+  }
+
+  static formatType(type) {
     switch (type) {
       case 'R':
       case 'r':
@@ -152,20 +187,19 @@ class ModelWine {
         type = 'Other'
         break
     }
-
-    return { name, year, type }
+    return type
   }
 
-  static sortFormat(wines) {
+  static formatResult(wines, desc) {
     let message = ''
+    desc = this.formatType(desc)
 
     for (let i = 0; i < wines.length; i++) {
       let age = new Date().getFullYear() - wines[i].year
       if (message === '') {
-        message += `${i + 1}. ${wines[i].name} (${age} years)`
-      } else {
-        message += `\n${i + 1}. ${wines[i].name} (${age} years)`
+        message += `${desc}:`
       }
+      message += `\n${i + 1}. ${wines[i].name} (${age} years)`
     }
 
     return message

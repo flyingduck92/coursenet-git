@@ -8,8 +8,8 @@ class ControllerWine {
   }
   // 1 list all wines
   static showAllWines() {
-    const wines = ModelWine.getAll()
-    ViewWine.showAll(wines)
+    const result = ModelWine.allWines()
+    ViewWine.message(result)
   }
 
   // 2 add a new wine
@@ -42,7 +42,11 @@ class ControllerWine {
     ViewWine.message(result)
   }
 
-  // 7 GroupBy
+  // 7 Group By Wine types 
+  static groupBy(params) {
+    let result = ModelWine.groupBy(params)
+    ViewWine.message(result)
+  }
   /* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy */
 
 }

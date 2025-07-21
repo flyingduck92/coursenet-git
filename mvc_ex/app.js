@@ -60,4 +60,14 @@ switch (command) {
      */
     ControllerWine.sortByAge(params)
     break
+  case "groupBy":
+    /*
+    Command - node index.js groupBy Red
+    Output:
+      Red:
+      1. Moscato 2010
+      2. White Bourdon
+    */
+    ControllerWine.groupBy(params)
+    break
 }

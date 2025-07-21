@@ -1,10 +1,4 @@
 class ViewWine {
-  static showAll(data) {
-    for (let item of data) {
-      console.log(`${item.id}. ${item.name}`)
-    }
-  }
-
   static message(msg) {
     console.log(msg)
   }
@@ -20,6 +14,7 @@ class ViewWine {
       rename <id> <params>  - update a wine from rack
       findById <id>         - look up wine by Id
       age <sortType>        - sorting wines by age 
+      groupBy <type>        - group wines by type 
 
       params format (with doubles quotes): 
       params    - "<name>/<year>/<type>"
