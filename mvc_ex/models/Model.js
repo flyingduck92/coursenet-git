@@ -31,13 +31,7 @@ class ModelWine {
     let { name, year, type } = this.formatItem(newEntry)
     let createdAt = new Date().toJSON()
 
-    let newItem = {
-      id,
-      name,
-      year,
-      type,
-      createdAt
-    }
+    let newItem = { id, name, year, type, createdAt }
 
     wines = [...wines, newItem]
     this.save(wines)
