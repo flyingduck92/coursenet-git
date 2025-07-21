@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Ethiopian Yirgacheffe",
+    "price": 12,
+    "beans": "Arabica",
+    "is_available": true
+  },
+  {
+    "id": 2,
+    "name": "Colombian Supremo",
+    "price": 9.5,
+    "beans": "Arabica",
+    "is_available": true
+  },
+  {
+    "id": 3,
+    "name": "Sumatra Mandheling",
+    "price": 8.8,
+    "beans": "Robusta",
+    "is_available": false
+  },
+  {
+    "id": 4,
+    "name": "Kenya AA",
+    "price": 11,
+    "beans": "Arabica",
+    "is_available": true
+  },
+  {
+    "id": 5,
+    "name": "Guatemala Antigua",
+    "price": 10.2,
+    "beans": "Mixed Blend",
+    "is_available": false
+  },
+  {
+    "id": 6,
+    "name": "Mocha Latte",
+    "price": 2500,
+    "beans": "arabica",
+    "is_available": true
+  }
+]
