@@ -2,39 +2,44 @@ const ModelWine = require('../models/Model')
 const ViewWine = require('../views/View')
 
 class ControllerWine {
-  //0
+  //0 showhelp
   static showHelp() {
     ViewWine.showHelpCommand()
   }
-  // 1
+  // 1 list all wines
   static showAllWines() {
     const wines = ModelWine.getAll()
     ViewWine.showAll(wines)
   }
 
-  // 2
+  // 2 add a new wine
   static addWine(params) {
-    ModelWine.add(params)
+    const result = ModelWine.add(params)
+    ViewWine.message(result)
   }
 
-  // 3
+  // 3 sell a wine (delete single wine from rack)
   static sellWine(params) {
-    ModelWine.delete(params)
+    const result = ModelWine.delete(params)
+    ViewWine.message(result)
   }
 
-  // 4
+  // 4 rename a wine
   static renameWine(params) {
-    ModelWine.rename(params)
+    const result = ModelWine.rename(params)
+    ViewWine.message(result)
   }
 
-  // 5
+  // 5 find a wine by Id
   static findById(params) {
-    ModelWine.lookUpId(params)
+    const result = ModelWine.findById(params)
+    ViewWine.message(result)
   }
 
   // 6 Sorting ASC/DESC
   static sortByAge(params) {
-    ModelWine.sort(params)
+    const result = ModelWine.sort(params)
+    ViewWine.message(result)
   }
 
   // 7 GroupBy

@@ -15,68 +15,75 @@ class ModelWine {
     return wines
   }
 
+  static getOneById(id) {
+    let wines = this.getAll()
+    let singleWine = wines.filter(wine => wine.id === id)[0]
+    return singleWine
+  }
+
   static add(params) {
     let wines = this.getAll()
+    let newEntry = params[0]
+    let id
 
-    let id = wines[wines.length - 1].id + 1
-    let [name, year, type] = params[0].split('/')
+    wines.length > 0 ? (id = wines[wines.length - 1].id + 1) : (id = 1)
 
-    if (type === 'R' || type === 'Red') {
-      type = 'Red'
-    } else if (type === 'W' || type === 'White') {
-      type = 'White'
-    } else {
-      type = 'Other'
-    }
+    let { name, year, type } = this.formatItem(newEntry)
+    let createdAt = new Date().toJSON()
 
     let newItem = {
       id,
       name,
-      "year": +year,
+      year,
       type,
-      createdAt: new Date().toJSON()
+      createdAt
     }
 
     wines = [...wines, newItem]
     this.save(wines)
-    console.log(`"${name}" has been added!`)
+    return `"${name}" has been added!`
   }
 
   static delete(params) {
     let wines = this.getAll()
     let id = +params[0]
-    let { name } = this.getOneItemById(id)
+    let name
 
-    wines = wines.filter(wine => wine.id !== id)
-    this.save(wines)
-    console.log(`"${name}" has been sold!`)
+    let result = this.getOneById(id)
+
+    if (result === undefined) {
+      return `Id ${id} is not found!`
+
+    } else {
+      wines.filter(wine => {
+        if (wine.id === id) {
+          name = wine.name
+        }
+      })
+
+      wines = wines.filter(wine => wine.id !== id)
+      this.save(wines)
+      return `"${name}" has been sold!`
+    }
   }
 
   static rename(params) {
     let wines = this.getAll()
     let [id, item] = [+params[0], params[1]]
+    id = +id
 
-    let result = this.getOneItemById(id)
+    let result = this.getOneById(id)
 
     if (result === undefined) {
-      console.log(`Id ${id} is not found!`)
-      return
+      return `Id ${id} is not found!`
 
     } else {
-      let [name, year, type] = item.split('/')
+      let { name, year, type } = this.formatItem(item)
 
-      if (type === 'R' || type === 'Red') {
-        type = 'Red'
-      } else if (type === 'W' || type === 'White') {
-        type = 'White'
-      } else {
-        type = 'Other'
-      }
-
-      let updated = wines.filter(wine => {
+      let updated = wines.map(wine => {
         if (wine.id === id) {
           wine.name = name
-          wine.year = +year
+          wine.year = year
           wine.type = type
         }
         return wine
@@ -84,23 +91,24 @@ class ModelWine {
 
       wines = updated
       this.save(wines)
-      console.log(`Wine number ${id} has been renamed !`)
+      return `Wine number ${id} has been renamed!`
     }
 
   }
 
-  static lookUpId(params) {
+  static findById(params) {
     let id = +params[0]
-    let result = this.getOneItemById(id)
+    let result = this.getOneById(id)
+
     if (result === undefined) {
-      console.log(`Id ${id} is not found!`)
+      return `Id ${id} is not found!`
 
     } else {
       let { name, year, type } = result
       let calculateYear = new Date().getFullYear() - year
       let drinkType = type === 'White' || type === 'Red' ? `${type} Wine` : `Other drink`
 
-      console.log(`${name} is ${drinkType} with age of ${calculateYear} years.`)
+      return `${name} is ${drinkType} with age of ${calculateYear} years.`
     }
   }
 
@@ -115,27 +123,62 @@ class ModelWine {
     if (params[0].toLowerCase() === 'asc' || params[0].toLowerCase() === 'ascending') {
       wines.sort((a, b) => b.year - a.year)
 
+      let message = ''
+
       for (let i = 0; i < wines.length; i++) {
         let age = new Date().getFullYear() - wines[i].year
-        console.log(`${i + 1}. ${wines[i].name} (${age} years)`)
+        if (message === '') {
+          message += `${i + 1}. ${wines[i].name} (${age} years)`
+        } else {
+          message += `\n${i + 1}. ${wines[i].name} (${age} years)`
+        }
       }
+
+      return message
     }
 
     // descending
     else if (params[0].toLowerCase() === 'desc' || params[0].toLowerCase() === 'descending') {
       wines.sort((a, b) => a.year - b.year)
 
+      let message = ''
+
       for (let i = 0; i < wines.length; i++) {
         let age = new Date().getFullYear() - wines[i].year
-        console.log(`${i + 1}. ${wines[i].name} (${age} years)`)
+
+        if (message === '') {
+          message += `${i + 1}. ${wines[i].name} (${age} years)`
+        } else {
+          message += `\n${i + 1}. ${wines[i].name} (${age} years)`
+        }
       }
+
+      return message
     }
+
   }
 
-  static getOneItemById(id) {
-    let wines = this.getAll()
-    let singleWine = wines.filter(wine => wine.id === id)[0]
-    return singleWine
+  static formatItem(item) {
+    let [name, year, type] = item.split('/')
+    year = Number(year)
+
+    switch (type) {
+      case 'R' || 'r':
+      case 'Red' || 'red':
+      case 'RED':
+        type = 'Red'
+        break
+      case 'W' || 'w':
+      case 'White' || 'white':
+      case 'WHITE':
+        type = 'White'
+        break
+      default:
+        type = 'Other'
+        break
+    }
+
+    return { name, year, type }
   }
 
   static save(updatedItems) {

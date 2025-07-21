@@ -5,9 +5,12 @@ class ViewWine {
     }
   }
 
+  static message(msg) {
+    console.log(msg)
+  }
+
   static showHelpCommand() {
-    console.log(`
-      node app.js <command> <params> 
+    let msg = `node app.js <command> <params> 
 
       list of command: 
       wines                 - shows all wines at the rack
@@ -15,13 +18,16 @@ class ViewWine {
       sell <id>             - remove a wine from rack
       rename <id> <params>  - update a wine from rack
       findById <id>         - look up wine by Id
+      age <sortType>        - sorting wines by age 
 
       params format (with doubles quotes): 
-      params  - "<name>/<year>/<type>"
-      name - string e.g: Negroni/Whiskey
-      year - year e.g: 1970
-      type - type e.g: R/Red/W/White/Other
-    `)
+      params    - "<name>/<year>/<type>"
+      name      - string e.g: Negroni/Whiskey
+      year      - year e.g: 1970
+      type      - type e.g: R/Red/W/White/Other
+      sortType  - ascending or asc / descending or desc 
+    `
+    console.log(msg)
   }
 }
 
