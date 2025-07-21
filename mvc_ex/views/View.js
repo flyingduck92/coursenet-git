@@ -10,9 +10,10 @@ class ViewWine {
   }
 
   static showHelpCommand() {
-    let msg = `node app.js <command> <params> 
+    let msg = `      node app.js <command> <params> 
 
       list of command: 
+      help                  - shows all commands
       wines                 - shows all wines at the rack
       add <params>          - add a brand new wine to rack
       sell <id>             - remove a wine from rack
