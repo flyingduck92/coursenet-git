@@ -25,7 +25,8 @@ class ViewWine {
       name      - string e.g: Negroni/Whiskey
       year      - year e.g: 1970
       type      - type e.g: R/Red/W/White/Other
-      sortType  - ascending or asc / descending or desc 
+      id        - positive number e.g: 1/20/5656/33
+      sortType  - "ascending" or "asc" / "descending" or "desc"
     `
     console.log(msg)
   }
