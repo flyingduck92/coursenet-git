@@ -70,8 +70,34 @@ class Warehouse {
 
   ship(id) {
 
+    // check item by id at cart
+    let result = ''
+    let myCart = this.carts
+
+    let i = 0
+    while (i < myCart.length) {
+      if (myCart[i].id === id) {
+        this.totalPrice += (myCart[i].amount * myCart[i].price)
+        result = `"${myCart[i].name}" has been shipped`
+
+        // remove from cart
+        const updatedCart = myCart.filter(item => item.id !== id)
+        this.carts = updatedCart
+        break
+      }
+      i++
+    }
+
+    // id notfound
+    if (result === '') {
+      result = `Id ${id} is not in the cart.`
+    }
+
+    console.log(result)
+    console.log(`Total Price: ${this.currencyFormat(this.totalPrice)}`)
   }
 
+  // utils => format currency
   currencyFormat(amount) {
     const formatter = new Intl.NumberFormat('id', {
       style: 'currency',
